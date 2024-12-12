@@ -1,0 +1,89 @@
+### CREATE five documents.
+POST http://localhost:3000/restaurants HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "McDonald's",
+    "dateVisited": "2024-10-23",
+    "rating": 4.7,
+    "review": "The McNuggets were perfectly crispy on the outside and chewy on the inside."
+}
+
+
+### CREATE 2
+POST http://localhost:3000/restaurants HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "Happy Burger",
+    "dateVisited": "2024-09-14",
+    "rating": 4.3,
+    "review": "Very fresh burger."
+}
+
+
+### CREATE 3
+POST http://localhost:3000/restaurants HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "Din Tai Fung",
+    "dateVisited": "2023-05-12",
+    "rating": 4.8,
+    "review": "Dumpling wrappers were very thin! Price was quite high."
+}
+
+### CREATE 4
+POST http://localhost:3000/restaurants HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "Harbord House",
+    "dateVisited": "2024-06-19",
+    "rating": 4.9,
+    "review": "The burgers were huge and perfectly cooked."
+}
+
+### CREATE 5
+POST http://localhost:3000/restaurants HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "Tim Hortons",
+    "dateVisited": "2024-04-09",
+    "rating": 3.2,
+    "review": "The sausage farmer's wrap was decent. Slightly too much ranch."
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/restaurants HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/restaurants/67442b39124d7f16208b292e HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the ID in the following request with one that exists
+### and update the year:
+PUT http://localhost:3000/restaurants/67442b78124d7f16208b2934 HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "Wendy's",
+    "dateVisited": "2023-03-23",
+    "rating": 3.3,
+    "review": "Burger was not bad. Not much was special about it."
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/restaurants/67442d5dc339c8161ff55844 HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/restaurants HTTP/1.1
+

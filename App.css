@@ -1,0 +1,604 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+  /* @import 'node_modules/modern-normalize/modern-normalize.css';  npm install modern-normalize  Resets elements for browser consistency.  https://www.npmjs.com/package/modern-normalize */         
+  /* @import "component1.css";   Component-specific stylesheets, if any.   */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=IM+Fell+English:ital@0;1&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+
+/*   ----- Variables  -----  */
+:root {
+  --dark-purple:#302120;
+  --light-pink:#fad1ccb7;
+  --medium-pink:#d890a2;
+  --accent-pink:#f5d3d3c2;
+  --darker-blue:#bda268a9;
+  --light-beige:#fff4dec9;
+  --light-mauve:#be9494c0;
+  --dark-mauve:#c2878780;
+  --dark-pink:#bb5e5e;
+  --dark-blue:#2e3553;
+  --darkest-pink:#6b101cc4;
+  --blue:#eff8ff;
+  --body-blue:#587bb82a;
+  --glow:#ffc70d;
+  --magic:#cec3ff;
+}
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+body { 
+  background-image: url(src/assets/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top left;
+  background-repeat: no-repeat;
+  font-family:"Playfair", serif;
+  color:var(--dark-purple);
+  font-size:19px;
+  line-height:1.2;
+  margin:0 auto;
+  max-width:100%;
+  min-width:40%;
+  margin-bottom:1%;
+  padding-bottom:1px;
+  text-align: justify;
+}
+
+/*  ----- Page layout blocks -----  */
+header {
+  background-color:var(--accent-pink);
+  box-shadow: inset 0 0 50px 9px var(--blue);
+  color: var(--darkest-pink);
+  border:8px dotted #fce4b7;
+  font-size:130%;
+  display:flex;
+  justify-content:center;
+  margin-bottom:20px;
+  width: 100%;
+  padding-bottom:15px;
+}
+
+.header-icon {
+  width:35px;
+  height:35px;
+}
+
+::selection {
+  background-color: var(--light-mauve);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+i > svg {
+  filter: drop-shadow(0 0 20px var(--glow));
+  transition: filter 300ms;
+  padding:20px;
+  vertical-align:middle;
+}
+
+.rotate:hover {
+  animation: spin 15s infinite;
+}
+
+main {
+  background-color:var(--light-beige);
+  padding:3.7%;
+  border-radius:37px;
+  max-width: 80%;
+  margin: auto;
+}
+
+section {
+  background-color:var(--light-beige);
+  padding:5%;
+  padding-top:10px;
+  border-radius:17px;
+  max-width:80%;
+  margin:0 auto;
+}
+
+#home-articles {
+  max-width:75%;
+  margin:auto;
+  background-color:var(--body-blue);
+}
+
+footer {
+  background-color:var(--accent-pink);
+  margin:0 auto;
+  border-radius:30px;
+  padding:auto;
+  text-align:center;
+  margin-top: 50px;
+}
+
+/* ----- Anchors ----- Text links */
+a {}
+a:link {}
+a:hover {
+}
+a:active {}
+a:visited {}
+
+#reviewLink {
+  background-color: var(--body-blue);
+  padding: 15px;
+  border-radius: 20px;
+  color: dark var(--darkest-pink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:40px;
+}
+
+#reviewLink:hover {
+  background-color: var(--darkest-pink);
+  color:lightyellow
+}
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: clamp(6px, 2.3vw, 18px); 
+  color: #ffffff;
+  border-radius: 98px;
+  transition: background-color 0.3s;
+  flex: 1 1 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-width: 0; 
+}
+
+nav a:hover {
+  background-color:rgba(122, 30, 27, 0.589);
+  filter: drop-shadow(0 0 20px var(--magic));
+  color:rgb(255, 241, 244);
+}
+
+.local {
+  max-width:90%;
+  overflow-x: scroll;
+  margin: 0 auto;
+}
+
+
+.local::-webkit-scrollbar-thumb {
+  background-color: rgba(122, 30, 27, 0.589); /* Thumb color */
+  border-radius: 6px; /* Thumb rounded corners */
+}
+
+.local a {
+  color: var(--dark-purple);
+  margin-left:33px;
+  margin-right:33px;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  white-space: normal;
+}
+
+.local a:hover {
+  background-color: var(--body-blue);
+  color: var(--darkest-pink);
+}
+
+::-webkit-scrollbar {
+  width: 2px !important;
+  align-items: center;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--light-beige) !important;
+  border: 3px solid var(--body-blue);
+  border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--body-blue) !important;
+  border-radius: 10px !important;
+}
+
+
+
+/*  -----  Typography  ----- */
+p {
+  overflow-wrap: break-word;
+}
+
+br {}
+ol, ul, dl {}
+li {}
+dt {}
+dd {}
+
+h1, h2, h3 {
+  font-family: "IM Fell English", serif;
+  font-weight: bold;
+  font-size: 140%;
+  font-style: italic;
+  text-align:center;  
+} 
+h1 {}
+h2 {
+  font-size:190%;
+  color:var(--dark-purple);
+}
+h3 {
+  margin-top:55px;
+}
+h4 {}
+h5 {}
+h6 {}
+
+abbr {}
+acronym {}
+address {}
+blockquote {}
+  q {}
+  cite {}
+em {}
+hr {}
+mark {}
+s {}
+span {}
+strong {}
+sub {}
+sup {}
+time {}
+
+/*  ----- Coding or instructional typography ----- */
+pre {}
+code {}
+kbd {}
+samp {}
+var {}
+del {} 
+ins {}
+
+/*  ----- Table ----- */
+table {
+  margin:0 auto;
+  width:auto;
+  border-collapse:collapse;
+  font-size: clamp(8px, 2.5vw, 19px); 
+  align-items:center;
+  table-layout: auto;
+}
+
+caption {
+  text-align:center;
+  background-color: var(--dark-mauve);
+  border:2px solid var(--accent-pink);
+  font-style:italic;
+  padding:1% 0;
+  margin: 3% auto;
+}
+
+thead {}
+tbody {
+  text-align:left;
+}
+tfoot {}
+
+tr th{
+  background-color:var(--darker-blue);
+  padding-top: 4%;
+  padding-bottom: 4%;
+  text-align:center;
+  font-size: clamp(12px, 2.6vw, 18px); 
+  width:auto;
+}
+
+th {
+}
+
+td {}
+  td:nth-child(1) {}
+
+tr td {
+  border-bottom:2px solid var(--medium-pink);
+  background-color:#f8ca321e;
+  padding:10px;
+  text-align:left;
+}
+
+
+colgroup {}
+data {}
+datalist {}
+
+.tableLegend {
+  font-size:130%;
+}
+
+#restaurantTable {
+  width: 100%;
+  max-width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  overflow-x: auto;
+  word-wrap: break-word;
+  font-size: clamp(6px, 1.9vw, 19px); 
+
+}
+
+#restaurantTable th, #restaurantTable td {
+  padding: 0.5rem;
+}
+
+.container {
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+
+/*  ----- Form ----- */
+form {
+  display:flex;
+  justify-content: center;
+  min-width:fit-content;
+  flex-flow:row wrap;
+}
+
+#reviewForm {
+  margin-top:55px;
+  display: flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+#reviewForm label {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-weight:400;
+}
+
+fieldset {
+  border:var(--dark-pink) dotted 2px;
+  margin:35px;
+  display:inline-block;
+}
+
+legend {
+  font-family: "IM Fell English", serif;
+  font-weight: normal;
+  font-size: 110%;
+  font-style: italic;
+  text-align:center;  
+  }
+label {
+  display:block;
+  margin-top:1.5%;
+}
+
+input, button, textarea, select {
+  font-size:90%;
+  padding:1%;
+  font-family:inherit;
+  border-radius:8px;
+  border:double 3px rgb(170, 115, 43);
+}
+
+button {
+  color:var(--light-beige);
+  background-color: var(--dark-blue);
+  text-align:center;
+  border-radius:30px;
+  border:var(--light-beige) double 3px;
+  font-size:100%;
+  padding:12px;
+}
+select {}
+  optgroup {}
+  option {}
+textarea {
+  min-height:auto;
+}
+output {}
+meter {}
+progress {}
+
+input:invalid{
+  border: solid 3px red;
+  border-radius:8px;
+}
+#asteriskWarning{
+  font-size:medium;
+}
+
+input[type="checkbox"], input[type="radio"]{
+  accent-color:var(--dark-pink);
+}
+
+:focus {
+  background-color: var(--accent-pink);
+}
+
+*::placeholder {
+  color:var(--darkest-pink);
+}
+
+label.required:after {
+  content: " *";
+  color: red;
+}
+
+#buyerInfo {
+  padding:25px;
+  margin:20px;
+  border:var(--dark-pink) dashed 4px;
+  border-radius:50px;
+  max-width: 20%;
+  text-align: left;
+}
+
+#checkoutButton {
+  display:block;
+  margin:auto;
+  margin-top:25px;
+  size:2px;
+  background-color: var(--darker-blue);  
+  border-radius:3px;
+  color: var(--light-pink);
+  border: 3px solid pink;
+  padding:6px;
+}
+
+button:hover{
+  color: var(--dark-purple);
+  background-color: var(--accent-pink);
+  border:var(--darkest-pink) 3px double;
+}  
+
+/* ----- Media ----- */
+#gallery-section {
+  padding:15px;
+}
+
+.gallery {
+  text-align:center;
+  justify-content: center;
+  display:flex;
+  flex-flow:row wrap;
+}
+
+#gallery-intro {
+  font-size:40px;
+  margin-top:30px;
+  margin-bottom:3px;
+}
+
+.gallery figure {
+  width:33%;
+  max-width:250px;
+  text-align:center;
+  margin:2px;
+  padding:2%;
+  border:dotted 3px rosybrown;
+  background-color:rgba(230, 243, 255, 0.411);
+}
+
+.gallery img {
+  max-width:100%;
+  height:auto;
+}
+
+.gallery figcaption {
+  display:block;
+  padding:2%;
+  font-size:90%;
+}
+
+figure {}
+  figcaption {}
+  figure img {}
+svg {}
+picture {}
+  source {}
+iframe {}
+video {}
+audio {}
+embed {}
+object {}
+
+/*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+.gallery {}
+
+.floatright {}
+.floatleft {}
+.center-middle {}
+
+.ten {}
+.twenty {}
+.thirty {}
+.forty {}
+.fifty {}
+.sixty {}
+.seventy {}
+.eighty {}
+
+.radius {}
+.circle {}
+.boxshadow {}
+.tshadow {} 
+.gradient {}
+.shape {}
+
+@keyframes App-logo {}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (min-width: 600px) {}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 1080px) {}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {}
+
+
+
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
